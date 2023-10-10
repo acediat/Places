@@ -16,3 +16,4 @@ rootProject.name = "Places"
 include ':app'
 include ':core:android'
 include ':core:res'
+include ':core:network'

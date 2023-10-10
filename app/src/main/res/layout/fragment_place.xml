@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/PlacesText.Medium"
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_start_button"
+            android:layout_margin="10dp"
+            android:text="Начать" />
+
+        <Button
+            style="@style/PlacesText.Medium"
+            android:id="@+id/known"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/dark_brown"
+            android:background="@drawable/shape_known_button"
+            android:layout_margin="10dp"
+            android:text="Узнать" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_toolbar"/>
+
+            <include
+                android:id="@+id/place"
+                layout="@layout/item_place"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:stretchColumns="*"
+                android:background="@color/dark_brown">
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_time" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_time" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        style="@style/PlacesText.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:gravity="center"
+                        android:text="5 Объектов" />
+                    <TextView
+                        style="@style/PlacesText.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:gravity="center"
+                        android:text="30 минут" />
+                    <TextView
+                        style="@style/PlacesText.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:gravity="center"
+                        android:text="3.5 км" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                style="@style/PlacesText.Medium"
+                android:id="@+id/place_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/dark_brown"
+                tools:text="asjdkfjashkdfjkahsjdkfhaskldjhsfaksjdbnscajsbdkjcvbasdlikjsvbasjkbdf jbjk baskjdbfkj asbdjkf baskjdbf"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

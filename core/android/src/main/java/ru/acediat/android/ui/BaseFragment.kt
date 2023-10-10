@@ -1,4 +1,4 @@
-package ru.acediat.android
+package ru.acediat.android.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,15 +14,16 @@ abstract class BaseFragment<B: ViewBinding, VM: ViewModel> : Fragment() {
     private var _binding: B? = null
     protected val binding: B get() = _binding!!
 
-    protected abstract val viewModelFactory: ViewModelProvider.Factory
+    protected abstract val viewModel: VM
 
-    protected val viewModel: VM by lazy { createViewModel() }
+    protected open fun inject() {}
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        inject()
         _binding = inflateBinding(container)
         prepareViewModel()
         prepareViews()
@@ -49,7 +50,7 @@ abstract class BaseFragment<B: ViewBinding, VM: ViewModel> : Fragment() {
     protected fun inflateBinding(container: ViewGroup?) = getBindingInflater()
         .invoke(layoutInflater, container, false)
 
-    private fun createViewModel(): VM = ViewModelProvider(
+    protected fun createViewModel(viewModelFactory: ViewModelProvider.Factory): VM = ViewModelProvider(
         this, viewModelFactory
     )[getViewModelClass()]
 

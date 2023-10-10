@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="25dp">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_fade_background">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+    
+            <TextView
+                style="@style/PlacesText.CardHeader"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                tools:text="Баумана"/>
+    
+            <TextView
+                style="@style/PlacesText.CardText"
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:maxLines="6"
+                tools:text="Улица Баумана в Казани - одно из самых привлекательных мест в туристической части города. Это пешеходный проспект, который является ядром Казанского посада." />
+    
+        </LinearLayout>
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:src="@drawable/ic_arrow_show"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView >
